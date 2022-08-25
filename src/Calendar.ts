@@ -14,7 +14,7 @@ export class Calendar {
     }
 }
 
-class YearCalendar extends Calendar{
+export class YearCalendar extends Calendar{
     protected _year!: number;
     
     constructor(year: number) {
@@ -44,7 +44,7 @@ class YearCalendar extends Calendar{
     }
 }
 
-class MonthCalendar extends YearCalendar {
+export class MonthCalendar extends YearCalendar {
     protected _month!: number;
 
     constructor(year: number, month: number) {
@@ -84,7 +84,7 @@ class MonthCalendar extends YearCalendar {
 }
 
 
-class DayCalendar extends MonthCalendar {
+export class DayCalendar extends MonthCalendar {
     protected _day!: number;
     constructor(year: number, month: number, day: number) {
         super(year, month);
@@ -125,7 +125,7 @@ class DayCalendar extends MonthCalendar {
 
 }
 
-class HourCalendar extends DayCalendar {
+export class HourCalendar extends DayCalendar {
     private _hour!: number;
     constructor(year: number, month: number, day: number, hour: number) {
         super(year, month, day);
