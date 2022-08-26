@@ -57,7 +57,7 @@ export class MonthCalendar extends YearCalendar {
     }
 
     public days(): Array<DayCalendar> {
-        return Array.from({length: this.daysInMonth()}, (_,i)=> new DayCalendar(this._year, this._month, i));
+        return Array.from({length: this.daysInMonth()}, (_,i)=> new DayCalendar(this._year, this._month, i + 1));
     }
 
     public daysInMonth() {
