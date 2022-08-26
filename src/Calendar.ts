@@ -42,6 +42,10 @@ export class YearCalendar extends Calendar{
     public previous() {
         return new YearCalendar(this._year - 1);
     }
+
+    public yearNumber() {
+        return this._year;
+    }
 }
 
 export class MonthCalendar extends YearCalendar {
@@ -80,6 +84,10 @@ export class MonthCalendar extends YearCalendar {
             return new MonthCalendar(this._year - 1, 11);
         }
         return new MonthCalendar(this._year, this._month + 1);
+    }
+
+    public monthNumber() {
+        return this._month;
     }
 }
 
@@ -123,6 +131,10 @@ export class DayCalendar extends MonthCalendar {
         return new DayCalendar(this._year, this._month, this._day - 1);
     }
 
+    public dayNumber() {
+        return this._day;
+    }
+
 }
 
 export class HourCalendar extends DayCalendar {
@@ -138,5 +150,9 @@ export class HourCalendar extends DayCalendar {
 
     public date(): Date {
         return new Date(this._year, this._month, this._day, this._hour);
+    }
+
+    public hourNumber() {
+        return this._hour;
     }
 }
