@@ -34,7 +34,7 @@ export class YearCalendar extends Calendar{
         return new Date(this._year, 1, 29).getDate() === 29;
     }
     public date() {
-        return new Date(this._year);
+        return new Date(this._year, 0);
     }
     public next() {
         return new YearCalendar(this._year + 1);;
@@ -83,7 +83,7 @@ export class MonthCalendar extends YearCalendar {
         if(this._month === 0) {
             return new MonthCalendar(this._year - 1, 11);
         }
-        return new MonthCalendar(this._year, this._month + 1);
+        return new MonthCalendar(this._year, this._month - 1);
     }
 
     public monthNumber() {
