@@ -1,6 +1,6 @@
 {
   "name": "ts-headless-calendar",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A headless calendar built with typescript",
   "main": "index.js",
   "scripts": {
