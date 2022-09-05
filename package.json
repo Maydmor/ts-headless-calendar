@@ -3,6 +3,10 @@
   "version": "1.0.7",
   "description": "A headless calendar built with typescript",
   "main": "index.js",
+  "author": {
+    "name": "Jakob Leibetseder", 
+    "email": "leibetsederjakob@gmail.com"
+  },
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
@@ -28,5 +32,8 @@
   "homepage": "https://github.com/Maydmor/ts-headless-calendar#readme",
   "files": [
     "lib/**/*"
+  ],
+  "keywords": [
+    "typescript", "ts", "headless", "renderless", "calendar", "date"
   ]
 }
