@@ -14,7 +14,7 @@
 <a href="#ts-headless-calendar" id="ts-headless-calendar" style="color: inherit; text-decoration: none;">
   <h1>ts-headless-calendar</h1>
 </a>
-<p>A headless calendar built purely with typescript.</p>
+<p>A easy to use headless calendar built purely with typescript and no dependencies.</p>
 
 <a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
   <h2>Getting started</h2>
@@ -23,18 +23,57 @@
 <a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
   <h3>Installation</h3>
 </a>
+<p>Install the package with </p>
+<pre><code><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-0">install</span><span class="hl-1"> </span><span class="hl-0">ts</span><span class="hl-1">-</span><span class="hl-0">headless</span><span class="hl-1">-</span><span class="hl-0">calendar</span>
+</code></pre>
+<p>or</p>
+<pre><code><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-0">add</span><span class="hl-1"> </span><span class="hl-0">ts</span><span class="hl-1">-</span><span class="hl-0">headless</span><span class="hl-1">-</span><span class="hl-0">calendar</span>
+</code></pre>
 
-<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-  <h3>Usage</h3>
+<a href="#user-guide" id="user-guide" style="color: inherit; text-decoration: none;">
+  <h3>User Guide</h3>
 </a>
+<p>Start by importing Calendar</p>
+<pre><code class="language-typescript"><span class="hl-2">import</span><span class="hl-1"> { </span><span class="hl-0">Calendar</span><span class="hl-1"> } </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&#39;ts-headless-calendar/lib&#39;</span>
+</code></pre>
 
-<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
-  <h3>Examples</h3>
+<a href="#create-a-calendar-instance" id="create-a-calendar-instance" style="color: inherit; text-decoration: none;">
+  <h4>Create a calendar instance</h4>
 </a>
+<pre><code class="language-typescript"><span class="hl-2">import</span><span class="hl-1"> { </span><span class="hl-0">Calendar</span><span class="hl-1"> } </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&#39;ts-headless-calendar/lib&#39;</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">calendar</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Calendar</span><span class="hl-1">();</span>
+</code></pre>
+
+<a href="#how-to-create-iterable-for-years-months-days-and-hours" id="how-to-create-iterable-for-years-months-days-and-hours" style="color: inherit; text-decoration: none;">
+  <h4>How to create iterable for years, months, days and hours</h4>
+</a>
+<pre><code class="language-typescript"><span class="hl-2">import</span><span class="hl-1"> { </span><span class="hl-0">Calendar</span><span class="hl-1"> } </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&#39;ts-headless-calendar/lib&#39;</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">calendar</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Calendar</span><span class="hl-1">();</span><br/><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">years</span><span class="hl-1">(</span><span class="hl-7">2000</span><span class="hl-1">, </span><span class="hl-7">2022</span><span class="hl-1">); </span><span class="hl-8">// Gives you an array containing all YearCalendars in the range (2000, 2022)</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">months</span><span class="hl-1">(); </span><span class="hl-8">// Gives you an array containing all MonthCalendars in the year 2011.</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">month</span><span class="hl-1">(</span><span class="hl-7">0</span><span class="hl-1">).</span><span class="hl-6">days</span><span class="hl-1">(); </span><span class="hl-8">// Gives you an array containing all DayCalendars for January 2011.</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">month</span><span class="hl-1">(</span><span class="hl-7">0</span><span class="hl-1">).</span><span class="hl-6">day</span><span class="hl-1">(</span><span class="hl-7">1</span><span class="hl-1">).</span><span class="hl-6">hours</span><span class="hl-1">(); </span><span class="hl-8">// Gives you an array containing all HourCalendars for January-1-2011</span>
+</code></pre>
+
+<a href="#navigating-the-calendar" id="navigating-the-calendar" style="color: inherit; text-decoration: none;">
+  <h4>Navigating the calendar</h4>
+</a>
+<p>You can navigate the calendar by using the next and previous methods.</p>
+<p>NOTE: The HourCalendar currently does not support next and previous.</p>
+<pre><code class="language-typescript"><span class="hl-2">import</span><span class="hl-1"> { </span><span class="hl-0">Calendar</span><span class="hl-1"> } </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&#39;ts-headless-calendar/lib&#39;</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">calendar</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Calendar</span><span class="hl-1">();</span><br/><br/><br/><span class="hl-8">// Next and previous year</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">next</span><span class="hl-1">(); </span><span class="hl-8">// Gives you the YearCalendar for 2012</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">previous</span><span class="hl-1">(); </span><span class="hl-8">// Gives you the YearCalendar for 2010</span><br/><br/><span class="hl-8">// next and previous month</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">month</span><span class="hl-1">(</span><span class="hl-7">0</span><span class="hl-1">).</span><span class="hl-6">next</span><span class="hl-1">(); </span><span class="hl-8">// Gives you the month calendar for February 2011.</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">month</span><span class="hl-1">(</span><span class="hl-7">1</span><span class="hl-1">).</span><span class="hl-6">previous</span><span class="hl-1">(); </span><span class="hl-8">// Gives you the month calendar for January 2011.</span><br/><br/><span class="hl-8">// wrap around is also supported e.g.:</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">month</span><span class="hl-1">(</span><span class="hl-7">0</span><span class="hl-1">).</span><span class="hl-6">previous</span><span class="hl-1">(); </span><span class="hl-8">// Gives you the month calendar for December 2010</span><br/><br/><span class="hl-8">// next and previous day</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">month</span><span class="hl-1">(</span><span class="hl-7">0</span><span class="hl-1">).</span><span class="hl-6">day</span><span class="hl-1">(</span><span class="hl-7">10</span><span class="hl-1">).</span><span class="hl-6">next</span><span class="hl-1">(); </span><span class="hl-8">// Gives you the day calendar for January-11-2011.</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">month</span><span class="hl-1">(</span><span class="hl-7">0</span><span class="hl-1">).</span><span class="hl-6">day</span><span class="hl-1">(</span><span class="hl-7">10</span><span class="hl-1">).</span><span class="hl-6">next</span><span class="hl-1">(); </span><span class="hl-8">// Gives you the day calendar for January-9-2011.</span><br/><br/><span class="hl-8">// wrap around is also supported e.g.:</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">month</span><span class="hl-1">(</span><span class="hl-7">0</span><span class="hl-1">).</span><span class="hl-6">day</span><span class="hl-1">(</span><span class="hl-7">1</span><span class="hl-1">).</span><span class="hl-6">previous</span><span class="hl-1">(); </span><span class="hl-8">// Gives you the day calendar for December-31-2010</span><br/>
+</code></pre>
+
+<a href="#converting-to-date-objects" id="converting-to-date-objects" style="color: inherit; text-decoration: none;">
+  <h4>Converting to Date objects</h4>
+</a>
+<p>All classes have a corresponding Date representation.
+You can simply call the date() method, to get the corresponding JS Date.</p>
+<pre><code class="language-typescript"><span class="hl-2">import</span><span class="hl-1"> { </span><span class="hl-0">Calendar</span><span class="hl-1"> } </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&#39;ts-headless-calendar/lib&#39;</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">calendar</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Calendar</span><span class="hl-1">();</span><br/><br/><br/><span class="hl-8">// Next and previous year</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">date</span><span class="hl-1">(); </span><span class="hl-8">// Gives you the JS Date for 2012</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">month</span><span class="hl-1">(</span><span class="hl-7">0</span><span class="hl-1">).</span><span class="hl-6">date</span><span class="hl-1">(); </span><span class="hl-8">// Gives you the JS Date January 2011.</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">month</span><span class="hl-1">(</span><span class="hl-7">0</span><span class="hl-1">).</span><span class="hl-6">day</span><span class="hl-1">(</span><span class="hl-7">10</span><span class="hl-1">).</span><span class="hl-6">date</span><span class="hl-1">(); </span><span class="hl-8">// Gives you the JS Date for January-10-2011.</span><br/><span class="hl-0">calendar</span><span class="hl-1">.</span><span class="hl-6">year</span><span class="hl-1">(</span><span class="hl-7">2011</span><span class="hl-1">).</span><span class="hl-6">month</span><span class="hl-1">(</span><span class="hl-7">0</span><span class="hl-1">).</span><span class="hl-6">day</span><span class="hl-1">(</span><span class="hl-7">10</span><span class="hl-1">).</span><span class="hl-6">hour</span><span class="hl-1">(</span><span class="hl-7">23</span><span class="hl-1">).</span><span class="hl-6">date</span><span class="hl-1">(); </span><span class="hl-8">// Gives you the JS Date for January-10-2011 23:00.</span><br/>
+</code></pre>
+
+<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+  <h2>Documentation</h2>
+</a>
+<p>See <a href="https://maydmor.github.io/ts-headless-calendar/">https://maydmor.github.io/ts-headless-calendar/</a></p>
 
 <a href="#license" id="license" style="color: inherit; text-decoration: none;">
   <h2>License</h2>
 </a>
+<p>MIT</p>
 </div></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
