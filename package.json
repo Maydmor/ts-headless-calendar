@@ -4,7 +4,7 @@
   "description": "A headless calendar built with typescript",
   "main": "index.js",
   "author": {
-    "name": "Jakob Leibetseder", 
+    "name": "Jakob Leibetseder",
     "email": "leibetsederjakob@gmail.com"
   },
   "scripts": {
@@ -34,6 +34,11 @@
     "lib/**/*"
   ],
   "keywords": [
-    "typescript", "ts", "headless", "renderless", "calendar", "date"
+    "typescript",
+    "ts",
+    "headless",
+    "renderless",
+    "calendar",
+    "date"
   ]
 }
