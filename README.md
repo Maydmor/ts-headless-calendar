@@ -93,5 +93,8 @@ calendar.year(2011).month(0).day(10).date(); // Gives you the JS Date for Januar
 calendar.year(2011).month(0).day(10).hour(23).date(); // Gives you the JS Date for January-10-2011 23:00.
 
 ```
+
+## Documentation
+See https://maydmor.github.io/ts-headless-calendar/
 ## License
 MIT
